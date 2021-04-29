@@ -1,0 +1,44 @@
+<div class="container d-flex justify-content-center mt-3">
+  <div class="w-50" id="formContent">
+
+    <!-- Form signuo   -->
+    <form [formGroup]="this.userForm" class="needs-validation mt-2" (submit)="this.signup()">
+      <!--  Name and last name    -->
+      <h1>User Information</h1>
+      <div class="form-row justify-content-center">
+        <div class="form-group col-md-10">
+          <label for="inputEmail4">Name</label>
+          <input [ngClass]="!userForm.get('nome').errors  ? 'is-valid' : 'is-invalid'" formControlName="nome"
+                 type="email" class="form-control"
+                 placeholder="Name" [required]="true" minlength="5">
+        </div>
+      </div>
+
+      <!--  Email and Password    -->
+      <div class="form-row justify-content-center">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input [ngClass]="!userForm.get('email').errors ? 'is-valid' : 'is-invalid'" formControlName="email"
+                 type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputPassword4">Password</label>
+          <input [ngClass]="!userForm.get('senha').errors ? 'is-valid' : 'is-invalid'" formControlName="senha"
+                 type="password" class="form-control" id="inputPassword4"
+                 placeholder="Password">
+        </div>
+      </div>
+
+      <!--  Sign or back    -->
+      <div class="form-row justify-content-center mb-3 mt-5">
+        <div class="form-group col-md-5">
+          <button type="submit" class="btn btn-outline-primary col-md-12" [disabled]="this.userForm.invalid">Sign in
+          </button>
+        </div>
+        <div class="form-group col-md-5">
+          <button type="submit" class="btn btn-outline-primary col-md-12" (click)="this.back()">Back</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

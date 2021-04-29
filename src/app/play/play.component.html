@@ -1,0 +1,19 @@
+<!-- Login Form -->
+<form [formGroup]="this.playForm" class="row w-100 justify-content-center">
+  <div class="col-10">
+    <input [ngClass]="!this.playForm.get('playerName').errors ? 'is-valid' : 'is-invalid'" formControlName="playerName"
+           type="text" class="form-control fadeIn second mt-3"
+           name="nickname" placeholder="nickname">
+  </div>
+  <div class="col-10">
+    <input [ngClass]="!this.playForm.get('ip').errors ? 'is-valid' : 'is-invalid'" formControlName="ip"
+           type="number" class="form-control fadeIn second mt-3" id="exampleInputEmail1"
+           name="ip" placeholder="ip">
+  </div>
+  <div class="col-10">
+    <input [ngClass]="!this.playForm.get('port').errors ? 'is-valid' : 'is-invalid'" formControlName="port"
+           type="number" class="form-control fadeIn third mt-3"
+           id="exampleInputPassword1"
+           name="port" placeholder="port">
+  </div>
+</form>
