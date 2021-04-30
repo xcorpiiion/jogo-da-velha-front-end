@@ -58,6 +58,20 @@ export class ClienteService {
     });
   }
 
+  sendMessage(message: string): Observable<any> {
+    return this.http.post(`${API_CONFIG.baseUrl}/clientes/sendMessage`, message, {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
+  messegeReceived(): Observable<any> {
+    return this.http.post(`${API_CONFIG.baseUrl}/clientes/received`, null, {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
   update(cliente: Cliente, id: string): Observable<any> {
     return this.http.put(`${API_CONFIG.baseUrl}/clientes/edit/${id}`, cliente, {
       observe: 'response',
@@ -73,7 +87,7 @@ export class ClienteService {
     return this.http.get<boolean>(`${API_CONFIG.baseUrl}/clientes/allowed`);
   }
 
-  firstToPlay(): Observable<Game> {
-    return this.http.get<Game>(`${API_CONFIG.baseUrl}/clientes/firstToPlay`);
+  getMessage(): Observable<string[]> {
+    return this.http.get<string[]>(`${API_CONFIG.baseUrl}/clientes/newMessage`);
   }
 }

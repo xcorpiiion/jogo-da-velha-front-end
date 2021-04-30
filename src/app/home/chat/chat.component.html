@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+    <div class="col-12 text-center">
+      <h1>Chat</h1>
+    </div>
+
+    <div class="col-10 d-flex justify-content-center">
+      <cdk-virtual-scroll-viewport itemSize="50" minBufferPx="200" maxBufferPx="400"
+                                   class="example-viewport">
+        <div *ngFor="let item of messages" class="example-item">{{item}}</div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+
+    <div class="col-12 row justify-content-center mt-2 mb-3">
+      <div class="col-9">
+        <span class="input-group-text">Send your message</span>
+        <form class="form-group" [formGroup]="this.mensagemForm">
+          <textarea class="form-control" formControlName="message" placeholder="your message" [value]="this.message"
+                    aria-label="With textarea"></textarea>
+        </form>
+        <div>
+          <button type="button" class="btn btn-outline-primary w-100 mt-3" (click)="handleClick()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
