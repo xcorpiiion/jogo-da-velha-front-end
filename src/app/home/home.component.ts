@@ -3,6 +3,7 @@ import {interval} from 'rxjs';
 import {ClienteService} from '../service/model/cliente.service';
 import {StorageService} from '../service/storage.service';
 import {Game} from '../model/game';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,8 @@ import {Game} from '../model/game';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  player1 = 'assets/imagens/Gojo%20(1).png';
-  player2 = 'assets/imagens/Sukuna%20(1).png';
+  player1 = 'assets/imagens/image_icon_favorite_8_pic_512x512.png';
+  player2 = 'assets/imagens/image_icon_x_mark_pic_512x512.png';
   noPlayer = 'assets/imagens/white%20panel.png';
   currentImages: string[] = [];
   playerTurn = this.player1;
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   interval: any;
   game: Game;
 
-  constructor(private clienteService: ClienteService, private storageService: StorageService) {
+  constructor(private clienteService: ClienteService, private storageService: StorageService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -116,7 +117,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       }
       alert('No win');
-      window.location.reload();
+      this.router.navigate(['empresa']);
     }
   }
 
@@ -126,8 +127,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (this.currentImages[position[contador]] === currentPlayer &&
         this.currentImages[position[contador + 1]] === currentPlayer &&
         this.currentImages[position[contador + 2]] === currentPlayer) {
-        alert('Player: ' + this.playerName + ' won');
-        window.location.reload();
+        alert('Player: ' + this.playerName + ' venceu, retire o seu prêmio');
+        this.router.navigate(['empresa']);
         this.hasWin = true;
         break;
       }

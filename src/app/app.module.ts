@@ -15,7 +15,7 @@ import {StorageService} from './service/storage.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

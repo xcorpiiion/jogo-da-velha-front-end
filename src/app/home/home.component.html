@@ -1,41 +1,43 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <label>Vez do jogador</label>
+<div class="teste2">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-2">
+        <label>Vez do jogador</label>
+      </div>
+      <div class="col-2">
+        <label>{{this.playerName}}</label>
+      </div>
     </div>
-    <div class="col-2">
-      <label>{{this.playerName}}</label>
-    </div>
-  </div>
-  <div class="tabuleiro d-flex justify-content-center mt-5 h-100 w-100">
-    <div>
-      <div id="a1" class="espaco" (click)="this.handleClickInSquare(0)"><img [src]="this.currentImages[0]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="a2" class="espaco" (click)="this.handleClickInSquare(1)"><img [src]="this.currentImages[1]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="a3" class="espaco" (click)="this.handleClickInSquare(2)"><img [src]="this.currentImages[2]" width="176"
-                                                                             height="176" alt="gojo"></div>
-    </div>
-    <div>
-      <div id="b1" class="espaco" (click)="this.handleClickInSquare(3)"><img [src]="this.currentImages[3]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="b2" class="espaco" (click)="this.handleClickInSquare(4)"><img [src]="this.currentImages[4]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="b3" class="espaco" (click)="this.handleClickInSquare(5)"><img [src]="this.currentImages[5]" width="176"
-                                                                             height="176" alt="gojo"></div>
-    </div>
+    <div class="tabuleiro d-flex justify-content-center mt-5 h-100 w-100">
+      <div>
+        <div id="a1" class="espaco" (click)="this.handleClickInSquare(0)"><img [src]="this.currentImages[0]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="a2" class="espaco" (click)="this.handleClickInSquare(1)"><img [src]="this.currentImages[1]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="a3" class="espaco" (click)="this.handleClickInSquare(2)"><img [src]="this.currentImages[2]" width="176"
+                                                                               height="176" alt="gojo"></div>
+      </div>
+      <div>
+        <div id="b1" class="espaco" (click)="this.handleClickInSquare(3)"><img [src]="this.currentImages[3]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="b2" class="espaco" (click)="this.handleClickInSquare(4)"><img [src]="this.currentImages[4]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="b3" class="espaco" (click)="this.handleClickInSquare(5)"><img [src]="this.currentImages[5]" width="176"
+                                                                               height="176" alt="gojo"></div>
+      </div>
 
-    <div>
-      <div id="c1" class="espaco" (click)="this.handleClickInSquare(6)"><img [src]="this.currentImages[6]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="c2" class="espaco" (click)="this.handleClickInSquare(7)"><img [src]="this.currentImages[7]" width="176"
-                                                                             height="176" alt="gojo"></div>
-      <div id="c3" class="espaco" (click)="this.handleClickInSquare(8)"><img [src]="this.currentImages[8]" width="176"
-                                                                             height="176" alt="gojo"></div>
+      <div>
+        <div id="c1" class="espaco" (click)="this.handleClickInSquare(6)"><img [src]="this.currentImages[6]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="c2" class="espaco" (click)="this.handleClickInSquare(7)"><img [src]="this.currentImages[7]" width="176"
+                                                                               height="176" alt="gojo"></div>
+        <div id="c3" class="espaco" (click)="this.handleClickInSquare(8)"><img [src]="this.currentImages[8]" width="176"
+                                                                               height="176" alt="gojo"></div>
+      </div>
     </div>
-  </div>
-  <div class="d-flex justify-content-center mt-5 w-100 h-100">
-    <app-chat></app-chat>
+    <div class="d-flex justify-content-center mt-5 w-100 h-100">
+      <app-chat></app-chat>
+    </div>
   </div>
 </div>
 

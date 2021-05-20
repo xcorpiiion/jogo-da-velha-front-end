@@ -1,13 +1,12 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {HomeComponent} from './home.component';
 import {AuthGuard} from '../core/auth/auth-guard.service';
+import {EmpresaComponent} from './empresa.component';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthGuard],
-    component: HomeComponent
+    component: EmpresaComponent
   }
 ];
 
@@ -15,7 +14,7 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {
+export class EmpresaRoutingModule {
 
   constructor() {
   }

@@ -15,8 +15,12 @@ export class AuthGuard implements CanActivate {
     UrlTree> | boolean | UrlTree {
     this.clienteService.isLogged().subscribe((logged) => {
       if (logged) {
-        this.router.navigate(['home']);
-        return false;
+        this.clienteService.isAllowed().subscribe((allowed) => {
+          if (allowed) {
+            this.router.navigate(['home']);
+            return false;
+          }
+        });
       }
     });
     return true;
