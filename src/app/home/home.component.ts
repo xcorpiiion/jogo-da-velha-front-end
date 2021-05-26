@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  player1 = 'assets/imagens/image_icon_favorite_8_pic_512x512.png';
+  player1 = 'assets/imagens/Gota.png';
   player2 = 'assets/imagens/image_icon_x_mark_pic_512x512.png';
   noPlayer = 'assets/imagens/white%20panel.png';
   currentImages: string[] = [];
