@@ -127,7 +127,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (this.currentImages[position[contador]] === currentPlayer &&
         this.currentImages[position[contador + 1]] === currentPlayer &&
         this.currentImages[position[contador + 2]] === currentPlayer) {
-        alert('Player: ' + this.playerName + ' venceu, retire o seu prêmio');
+        alert('Player: ' + this.playerName + ' venceu, retire o seu prêmio no RH com o código: ' + Math.random());
         this.router.navigate(['empresa']);
         this.hasWin = true;
         break;
